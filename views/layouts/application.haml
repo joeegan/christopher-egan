@@ -12,7 +12,7 @@
 
       != css :application
 
-   %body{:class => page_theme + ' ' + current_primary + solid_nav + is_project_css + is_news_css + is_home_css + device_css}
+   %body{:class => page_theme + ' ' + current_primary + solid_nav + is_project_css + is_news_css + is_home_css + device_css, :host => 'heroku'}
       #outer
          = partial :'nav'
          #wrapper
