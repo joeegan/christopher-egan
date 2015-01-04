@@ -1,0 +1,39 @@
+#nav
+   #nav-inner
+
+      %a.logo{:href => "/"}
+
+         %img{:src => '/images/' + page_theme + '/logo.png', :width => 134, :height => 33 }
+
+      %ul.top
+         -nav_top.each_index do |primary_idx|
+            -primary_hash  = nav_top[primary_idx]
+            -primary_token = get_token(primary_hash)
+            -unless primary_idx == 0
+               %li
+                  %a{:href => "/" + primary_token, :class => selected_primary(primary_token) + ' ' + primary_token}
+                     =primary_hash[:title]
+
+                     -if primary_hash[:title] == "Projects"
+                        =partial :projects_nav
+
+                     -if primary_hash[:title] == "Consultancy" and current_primary == 'consultancy'
+                        %ul.secondary
+                           %li
+                              %a{ :href => "/consultancy/bulgari", :class => "selected"}
+                                 Bulgari
+
+      .contact-content
+         %p
+            Christopher Egan Architecture Ltd
+            %br
+            6th Floor,
+            %br
+            23-25 Eastcastle Street,
+            %br
+            London W1W 8DF
+
+         %p
+            +44 (0)20 7637 9664
+         %a{:href => "mailto:admin@christopher-egan.com"}
+            admin@christopher-egan.com
