@@ -10,8 +10,8 @@ GEM
     mobvious (0.3.2)
       mobileesp_converted (~> 0.2.0)
       rack (>= 1.1.0)
-    rack (1.6.0)
-    rack-protection (1.5.3)
+    rack (1.6.11)
+    rack-protection (1.5.5)
       rack
     rack-test (0.6.2)
       rack (>= 1.0)
